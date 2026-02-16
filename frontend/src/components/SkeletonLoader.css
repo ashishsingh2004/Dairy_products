@@ -1,0 +1,141 @@
+/* Skeleton Loader Styles */
+.skeleton-container {
+    display: contents;
+}
+
+/* Base skeleton animation */
+.skeleton {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.1) 25%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Product Card Skeleton */
+.skeleton-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(13, 71, 161, 0.15);
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+.skeleton-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.skeleton-title {
+    width: 70%;
+    height: 24px;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 16px;
+}
+
+.skeleton-text.short {
+    width: 60%;
+}
+
+.skeleton-button {
+    width: 120px;
+    height: 40px;
+    margin-top: 0.5rem;
+}
+
+/* List Item Skeleton */
+.skeleton-list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+}
+
+.skeleton-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.skeleton-list-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Circle Skeleton */
+.skeleton-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.skeleton-circle.small {
+    width: 50px;
+    height: 50px;
+}
+
+/* Stats Skeleton */
+.skeleton-stats {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(13, 71, 161, 0.15);
+}
+
+.skeleton-stats-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Text Block Skeleton */
+.skeleton-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skeleton-image {
+        height: 150px;
+    }
+
+    .skeleton-circle {
+        width: 60px;
+        height: 60px;
+    }
+}

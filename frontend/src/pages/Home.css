@@ -1,0 +1,1040 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Hind', 'Tiro Devanagari Hindi', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Enhanced Home Page with Village Theme */
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 40%, #90caf9 70%, #64b5f6 100%);
+  animation: fadeIn 0.6s ease-in;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sky with animated clouds */
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  background:
+    radial-gradient(ellipse 220px 70px at 15% 60px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(ellipse 280px 80px at 55% 90px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(ellipse 200px 60px at 85% 50px, rgba(255, 255, 255, 0.7), transparent);
+  animation: cloudFloat 25s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes cloudFloat {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(40px);
+  }
+}
+
+/* Village Scene - All elements */
+.village-scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Make individual elements interactive */
+.village-scene>* {
+  pointer-events: auto;
+}
+
+/* Bright Animated Sun */
+.sun {
+  position: absolute;
+  top: 6%;
+  right: 8%;
+  font-size: 6rem;
+  animation: sunPulse 3s ease-in-out infinite, sunRotate 40s linear infinite;
+  filter: drop-shadow(0 0 40px rgba(255, 193, 7, 1)) drop-shadow(0 0 80px rgba(255, 235, 59, 0.6));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sun:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 60px rgba(255, 193, 7, 1)) drop-shadow(0 0 120px rgba(255, 235, 59, 0.8));
+}
+
+.sun:active {
+  transform: scale(0.95);
+  animation: sunBounce 0.5s ease;
+}
+
+@keyframes sunBounce {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes sunPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+@keyframes sunRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Flying Birds */
+.bird {
+  position: absolute;
+  font-size: 2.2rem;
+  animation: flyAcross 18s linear infinite;
+  opacity: 0.8;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.bird-1 {
+  top: 10%;
+  animation-delay: 0s;
+}
+
+.bird-2 {
+  top: 16%;
+  animation-delay: 6s;
+  font-size: 2rem;
+}
+
+@keyframes flyAcross {
+  0% {
+    left: -10%;
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(5deg);
+  }
+
+  75% {
+    transform: translateY(-15px) rotate(-3deg);
+  }
+
+  100% {
+    left: 110%;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Trees */
+.tree {
+  position: absolute;
+  font-size: 7rem;
+  animation: treeWave 5s ease-in-out infinite;
+  filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tree:hover {
+  transform: scale(1.15) rotate(-5deg);
+  filter: drop-shadow(5px 8px 15px rgba(0, 0, 0, 0.4));
+}
+
+.tree:active {
+  animation: treeShake 0.5s ease;
+}
+
+@keyframes treeShake {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+.tree-left {
+  bottom: 18%;
+  left: 3%;
+  animation-delay: 0s;
+}
+
+.tree-right {
+  bottom: 23%;
+  right: 2%;
+  animation-delay: 1.2s;
+  font-size: 7.5rem;
+}
+
+.tree-center {
+  bottom: 28%;
+  left: 12%;
+  font-size: 5rem;
+  animation-delay: 0.7s;
+}
+
+@keyframes treeWave {
+
+  0%,
+  100% {
+    transform: rotate(-3deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(3deg) scale(1.02);
+  }
+}
+
+/* Mud Houses */
+.mud-house {
+  position: absolute;
+  font-size: 4.5rem;
+  animation: houseFloat 4s ease-in-out infinite;
+  filter: drop-shadow(3px 5px 10px rgba(0, 0, 0, 0.35));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mud-house:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(5px 8px 20px rgba(0, 0, 0, 0.5));
+}
+
+.mud-house:active {
+  animation: houseShake 0.5s ease;
+}
+
+@keyframes houseShake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-8px);
+  }
+
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+.house-1 {
+  bottom: 13%;
+  left: 26%;
+  animation-delay: 0s;
+}
+
+.house-2 {
+  bottom: 10%;
+  right: 20%;
+  font-size: 4rem;
+  animation-delay: 2s;
+}
+
+@keyframes houseFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Lake/Pond */
+.lake {
+  position: absolute;
+  bottom: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.2rem;
+  font-size: 3rem;
+  color: #1976d2;
+  animation: waterShimmer 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 2px 8px rgba(25, 118, 210, 0.5));
+}
+
+.wave {
+  display: inline-block;
+  animation: waveMove 1.8s ease-in-out infinite;
+}
+
+.wave:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.wave:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes waveMove {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.1);
+  }
+}
+
+@keyframes waterShimmer {
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Fields */
+.field {
+  position: absolute;
+  bottom: 3%;
+  font-size: 3rem;
+  opacity: 0.6;
+  animation: fieldSway 4s ease-in-out infinite;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.field-1 {
+  left: 3%;
+  animation-delay: 0s;
+}
+
+.field-2 {
+  right: 3%;
+  animation-delay: 1.5s;
+}
+
+@keyframes fieldSway {
+
+  0%,
+  100% {
+    transform: skew(-3deg) scale(1);
+  }
+
+  50% {
+    transform: skew(3deg) scale(1.05);
+  }
+}
+
+/* Village Animals */
+.animal {
+  position: absolute;
+  font-size: 3.5rem;
+  animation: graze 6s ease-in-out infinite;
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.animal:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(5px 5px 12px rgba(0, 0, 0, 0.4));
+}
+
+.animal:active {
+  animation: animalJump 0.6s ease;
+}
+
+@keyframes animalJump {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.cow-grazing {
+  bottom: 16%;
+  left: 36%;
+  animation-delay: 0s;
+}
+
+.buffalo {
+  bottom: 20%;
+  right: 36%;
+  animation-delay: 3s;
+}
+
+@keyframes graze {
+
+  0%,
+  100% {
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(25px) scale(1.05);
+  }
+}
+
+/* Well */
+.well {
+  position: absolute;
+  bottom: 26%;
+  right: 46%;
+  font-size: 3rem;
+  animation: houseFloat 5s ease-in-out infinite;
+  animation-delay: 1.5s;
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* Modern Navbar with Village Theme */
+.navbar {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(13, 71, 161, 0.25);
+  border-bottom: 4px solid #1976d2;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.nav-brand h1 {
+  background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Tiro Devanagari Hindi', serif;
+  text-shadow: 2px 2px 4px rgba(13, 71, 161, 0.1);
+}
+
+.nav-subtitle {
+  font-size: 0.8rem;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: #0d47a1;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1976d2, #0d47a1);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-links a:hover {
+  transform: translateY(-2px);
+  color: #1976d2;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links .auth-link {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+}
+
+.nav-links .auth-link::after {
+  display: none;
+}
+
+.nav-links .auth-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(13, 71, 161, 0.5);
+}
+
+.language-switcher {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.language-switcher button {
+  background: white;
+  color: #1976d2;
+  border: 2px solid #1976d2;
+  padding: 0.6rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.language-switcher button:hover {
+  background: #1976d2;
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(13, 71, 161, 0.4);
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  color: #0d47a1;
+  text-shadow:
+    3px 3px 6px rgba(255, 255, 255, 0.8),
+    -1px -1px 2px rgba(13, 71, 161, 0.2);
+  animation: slideUp 0.8s ease-out;
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #1976d2;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: 'Tiro Devanagari Hindi', serif;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.hero-section>p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #0d47a1;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+  animation: slideUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Enhanced Feature Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 3rem 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 15px 50px rgba(13, 71, 161, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: 3px solid transparent;
+  animation: cardFloat 0.8s ease-out backwards;
+}
+
+.card-1 {
+  animation-delay: 0.1s;
+}
+
+.card-2 {
+  animation-delay: 0.3s;
+}
+
+.card-3 {
+  animation-delay: 0.5s;
+}
+
+@keyframes cardFloat {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(25, 118, 210, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.feature-card:hover::before {
+  left: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-20px) scale(1.03) rotateY(5deg);
+  box-shadow: 0 25px 80px rgba(13, 71, 161, 0.4);
+  border-color: #1976d2;
+}
+
+.card-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 10px rgba(13, 71, 161, 0.2));
+}
+
+.card-1:hover .card-icon {
+  animation: spin 1s ease-in-out;
+}
+
+.card-2:hover .card-icon {
+  animation: shake 0.5s ease-in-out;
+}
+
+.card-3:hover .card-icon {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-10px);
+  }
+
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.feature-card h3 {
+  color: #0d47a1;
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.feature-card p {
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Premium Button Design */
+.btn-primary {
+  background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 20px rgba(13, 71, 161, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 35px rgba(13, 71, 161, 0.6);
+}
+
+/* Village Footer */
+.village-footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  margin-top: 4rem;
+  border-top: 4px solid #1976d2;
+  box-shadow: 0 -8px 32px rgba(13, 71, 161, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.village-footer p {
+  color: #0d47a1;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0;
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sun {
+    font-size: 4rem;
+    top: 4%;
+    right: 4%;
+  }
+
+  .tree {
+    font-size: 4.5rem;
+  }
+
+  .mud-house {
+    font-size: 3rem;
+  }
+
+  .animal {
+    font-size: 2.5rem;
+  }
+
+  .lake {
+    font-size: 2rem;
+  }
+
+  .field {
+    font-size: 2rem;
+  }
+} 
+ 
+/* Language Switcher Dropdown */
+.language-switcher {
+    position: relative;
+}
+
+.language-btn {
+    background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.language-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.4);
+}
+
+.language-btn .flag {
+    font-size: 1.5rem;
+}
+
+.language-btn .lang-name {
+    font-family: 'Hind', sans-serif;
+}
+
+.dropdown-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(13, 71, 161, 0.3);
+    overflow: hidden;
+    min-width: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 2000;
+    animation: dropdownSlide 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.lang-option {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.lang-option:last-child {
+    border-bottom: none;
+}
+
+.lang-option:hover {
+    background: linear-gradient(135deg, rgba(13, 71, 161, 0.08), rgba(25, 118, 210, 0.08));
+    transform: translateX(5px);
+}
+
+.lang-option .flag {
+    font-size: 1.3rem;
+}
+
+.lang-option .lang-name {
+    flex: 1;
+    text-align: left;
+    font-family: 'Hind', sans-serif;
+}
+
+.lang-option .checkmark {
+    color: #1976d2;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.lang-option.active {
+    background: linear-gradient(135deg, rgba(13, 71, 161, 0.12), rgba(25, 118, 210, 0.12));
+    color: #0d47a1;
+    font-weight: 700;
+}
+
+.language-dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.language-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0 15px 15px 0;
+}
+
+.language-dropdown::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .language-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    .language-dropdown {
+        min-width: 180px;
+        max-height: 300px;
+    }
+}

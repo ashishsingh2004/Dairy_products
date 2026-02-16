@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
+
+/* Village-themed Auth Page with Blue & White */
+.auth-page {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Hind', 'Tiro Devanagari Hindi', sans-serif;
+}
+
+/* Sky with clouds effect */
+.auth-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background:
+        radial-gradient(ellipse 200px 60px at 20% 50px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(ellipse 250px 70px at 60% 80px, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(ellipse 180px 50px at 80% 40px, rgba(255, 255, 255, 0.6), transparent);
+    animation: cloudFloat 20s ease-in-out infinite;
+}
+
+@keyframes cloudFloat {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+}
+
+/* Village Scene Background */
+.village-scene {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Sun Animation */
+.sun {
+    position: absolute;
+    top: 8%;
+    right: 10%;
+    font-size: 5rem;
+    animation: sunPulse 4s ease-in-out infinite, sunRotate 30s linear infinite;
+    filter: drop-shadow(0 0 30px rgba(255, 193, 7, 0.8));
+}
+
+@keyframes sunPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes sunRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Flying Birds */
+.bird {
+    position: absolute;
+    font-size: 2rem;
+    animation: flyAcross 15s linear infinite;
+    opacity: 0.7;
+}
+
+.bird-1 {
+    top: 12%;
+    animation-delay: 0s;
+}
+
+.bird-2 {
+    top: 18%;
+    animation-delay: 5s;
+}
+
+@keyframes flyAcross {
+    0% {
+        left: -10%;
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        left: 110%;
+        transform: translateY(0);
+    }
+}
+
+/* Trees */
+.tree {
+    position: absolute;
+    font-size: 6rem;
+    animation: treeWave 4s ease-in-out infinite;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.tree-left {
+    bottom: 20%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.tree-right {
+    bottom: 25%;
+    right: 8%;
+    animation-delay: 1s;
+}
+
+.tree-center {
+    bottom: 30%;
+    left: 15%;
+    font-size: 4.5rem;
+    animation-delay: 0.5s;
+}
+
+@keyframes treeWave {
+
+    0%,
+    100% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+/* Mud Houses */
+.mud-house {
+    position: absolute;
+    font-size: 4rem;
+    animation: houseFloat 3s ease-in-out infinite;
+    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.house-1 {
+    bottom: 15%;
+    left: 28%;
+    animation-delay: 0s;
+}
+
+.house-2 {
+    bottom: 12%;
+    right: 22%;
+    font-size: 3.5rem;
+    animation-delay: 1.5s;
+}
+
+@keyframes houseFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Lake/Pond */
+.lake {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    font-size: 2.5rem;
+    color: #1976d2;
+    animation: waterShimmer 3s ease-in-out infinite;
+}
+
+.wave {
+    display: inline-block;
+    animation: waveMove 2s ease-in-out infinite;
+}
+
+.wave:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes waveMove {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes waterShimmer {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+}
+
+/* Fields */
+.field {
+    position: absolute;
+    bottom: 5%;
+    font-size: 2.5rem;
+    opacity: 0.5;
+    animation: fieldSway 3s ease-in-out infinite;
+}
+
+.field-1 {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.field-2 {
+    right: 5%;
+    animation-delay: 1s;
+}
+
+@keyframes fieldSway {
+
+    0%,
+    100% {
+        transform: skew(-2deg);
+    }
+
+    50% {
+        transform: skew(2deg);
+    }
+}
+
+/* Village Animals */
+.animal {
+    position: absolute;
+    font-size: 3rem;
+    animation: graze 5s ease-in-out infinite;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.cow-grazing {
+    bottom: 18%;
+    left: 38%;
+    animation-delay: 0s;
+}
+
+.buffalo {
+    bottom: 22%;
+    right: 38%;
+    animation-delay: 2s;
+}
+
+@keyframes graze {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
+}
+
+/* Well */
+.well {
+    position: absolute;
+    bottom: 28%;
+    right: 48%;
+    font-size: 2.5rem;
+    animation: houseFloat 4s ease-in-out infinite;
+    animation-delay: 1s;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Main Container */
+.auth-container-village {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.back-home {
+    display: inline-block;
+    color: #0d47a1;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    transition: all 0.3s;
+    border: 2px solid #1976d2;
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.2);
+}
+
+.back-home:hover {
+    background: white;
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.4);
+}
+
+/* Village Card with Traditional Design */
+.auth-card-village {
+    background: white;
+    border-radius: 15px;
+    box-shadow:
+        0 15px 50px rgba(13, 71, 161, 0.3),
+        inset 0 0 0 3px #1976d2;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Traditional Border Patterns */
+.traditional-border-top,
+.traditional-border-bottom {
+    height: 20px;
+    background: linear-gradient(90deg,
+            #1976d2 0%, #1976d2 10%,
+            white 10%, white 20%,
+            #1976d2 20%, #1976d2 30%,
+            white 30%, white 40%,
+            #1976d2 40%, #1976d2 50%,
+            white 50%, white 60%,
+            #1976d2 60%, #1976d2 70%,
+            white 70%, white 80%,
+            #1976d2 80%, #1976d2 90%,
+            white 90%, white 100%);
+    background-size: 40px 100%;
+}
+
+.traditional-border-bottom {
+    background: repeating-linear-gradient(45deg,
+            #1976d2,
+            #1976d2 10px,
+            white 10px,
+            white 20px);
+}
+
+/* Header with Village Theme */
+.auth-header-village {
+    text-align: center;
+    padding: 2rem 2rem 1.5rem;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-bottom: 3px solid #1976d2;
+}
+
+.village-icon {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.auth-header-village h1 {
+    color: #0d47a1;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    text-shadow: 2px 2px 4px rgba(13, 71, 161, 0.2);
+}
+
+.village-tagline {
+    color: #1976d2;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Tab Switcher with Traditional Style */
+.auth-tabs-village {
+    display: flex;
+    background: #e3f2fd;
+    margin: 0;
+    border-bottom: 3px solid #1976d2;
+}
+
+.auth-tabs-village button {
+    flex: 1;
+    padding: 1.2rem;
+    background: transparent;
+    border: none;
+    color: #1976d2;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.auth-tabs-village button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: #1976d2;
+    transition: height 0.3s;
+}
+
+.auth-tabs-village button.active {
+    background: white;
+    color: #0d47a1;
+}
+
+.auth-tabs-village button.active::after {
+    height: 4px;
+}
+
+.auth-tabs-village button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Form Styling */
+.auth-form-village {
+    padding: 2.5rem;
+}
+
+.form-group-village {
+    margin-bottom: 1.8rem;
+}
+
+.form-group-village label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+    color: #0d47a1;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.label-icon {
+    font-size: 1.3rem;
+}
+
+.required {
+    color: #ef5350;
+    font-weight: 700;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #64b5f6;
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
+.form-group-village input,
+.form-group-village select {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid #90caf9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #e3f2fd;
+    color: #0d47a1;
+    font-family: 'Hind', sans-serif;
+}
+
+.form-group-village input.input-error {
+    border-color: #ef5350;
+    background: #ffebee;
+    animation: shake 0.5s;
+}
+
+.form-group-village input:focus,
+.form-group-village select:focus {
+    outline: none;
+    border-color: #1976d2;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.1);
+}
+
+.form-group-village input::placeholder {
+    color: #64b5f6;
+}
+
+.field-error {
+    display: block;
+    color: #c62828;
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+    font-weight: 500;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Password Input Wrapper */
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-wrapper input {
+    padding-right: 3.5rem;
+    flex: 1;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-toggle-btn:hover {
+    background: rgba(25, 118, 210, 0.1);
+    transform: scale(1.1);
+}
+
+.password-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* Village-style Button */
+.btn-village-primary {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #1976d2, #0d47a1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-village-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-village-primary:hover::before {
+    left: 100%;
+}
+
+.btn-village-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.5);
+}
+
+.btn-village-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loading-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Spinner Animation */
+.spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error Message with Village Theme */
+.error-message-village {
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+    color: #c62828;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1.5rem 2.5rem;
+    text-align: center;
+    font-weight: 600;
+    border: 2px solid #ef5350;
+    animation: shake 0.5s, fadeIn 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Success Message */
+.success-message-village {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #2e7d32;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1.5rem 2.5rem;
+    text-align: center;
+    font-weight: 600;
+    border: 2px solid #66bb6a;
+    animation: fadeIn 0.3s, pulse 0.6s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.message-icon {
+    font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Auth Footer Links */
+.auth-footer-links {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e3f2fd;
+}
+
+.auth-footer-links p {
+    color: #64b5f6;
+    font-size: 0.95rem;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: #1976d2;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+    font-family: 'Hind', sans-serif;
+}
+
+.link-btn:hover {
+    color: #0d47a1;
+}
+
+/* Village Footer */
+.village-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-top: 2rem;
+    border: 2px solid #90caf9;
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.2);
+}
+
+.village-footer p {
+    color: #0d47a1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-container-village {
+        padding: 1rem;
+    }
+
+    .auth-header-village h1 {
+        font-size: 2rem;
+    }
+
+    .auth-tabs-village button {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    .auth-form-village {
+        padding: 1.5rem;
+    }
+
+    .sun {
+        font-size: 3.5rem;
+        top: 5%;
+        right: 5%;
+    }
+
+    .tree {
+        font-size: 4rem;
+    }
+
+    .mud-house {
+        font-size: 3rem;
+    }
+
+    .animal {
+        font-size: 2rem;
+    }
+
+    .lake {
+        font-size: 2rem;
+    }
+}
